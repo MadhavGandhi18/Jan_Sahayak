@@ -52,6 +52,8 @@ The bot currently generates valid legal drafts for:
 * Runs locally via Ollama (No data leaves the server).
 * Robust error handling: If the AI misunderstands, it politely asks again.
 
+<img width="3861" height="2860" alt="image" src="https://github.com/user-attachments/assets/928ea208-54c0-4136-810f-68cb4e4db22c" />
+
 ---
 
 ## 🚀 Installation & Setup
