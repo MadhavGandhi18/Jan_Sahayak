@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import jsPDF from 'jspdf'
+import VoiceAssistant from '../components/VoiceAssistant'
 import './GovtAffidavits.css'
 
 const GovtAffidavits = () => {
@@ -9,6 +10,7 @@ const GovtAffidavits = () => {
   const [currentStep, setCurrentStep] = useState('select') // select, fill, generate
   const [requiredFields, setRequiredFields] = useState([])
   const [isGenerating, setIsGenerating] = useState(false)
+  const [isVoiceAssistantActive, setIsVoiceAssistantActive] = useState(false)
 
   const affidavitTypes = [
     {
@@ -56,6 +58,23 @@ const GovtAffidavits = () => {
     return fieldMap[affidavitType] || []
   }
 
+  // Listen for voice assistant affidavit selection
+  useEffect(() => {
+    const handleAffidavitSelect = (event) => {
+      const { id, name, fields } = event.detail
+      const affidavit = affidavitTypes.find(a => a.id === id)
+      if (affidavit) {
+        setSelectedAffidavit(affidavit)
+        setRequiredFields(fields)
+        setFormData({})
+        setCurrentStep('fill')
+      }
+    }
+
+    window.addEventListener('selectAffidavit', handleAffidavitSelect)
+    return () => window.removeEventListener('selectAffidavit', handleAffidavitSelect)
+  }, [])
+
   const handleAffidavitSelect = (affidavit) => {
     setSelectedAffidavit(affidavit)
     const fields = getRequiredFields(affidavit.id)
@@ -68,6 +87,14 @@ const GovtAffidavits = () => {
     setFormData(prev => ({
       ...prev,
       [field]: value
+    }))
+  }
+
+  // Handle voice assistant form data updates
+  const handleVoiceFormUpdate = (voiceFormData) => {
+    setFormData(prev => ({
+      ...prev,
+      ...voiceFormData
     }))
   }
 
@@ -230,6 +257,27 @@ const GovtAffidavits = () => {
           </div>
         </motion.div>
       )}
+
+      {/* Voice Assistant */}
+      {currentStep === 'fill' && (
+        <motion.button
+          className="voice-helper-btn"
+          onClick={() => setIsVoiceAssistantActive(true)}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>🎙️</span>
+          <span>Voice Helper</span>
+        </motion.button>
+      )}
+
+      <VoiceAssistant
+        isActive={isVoiceAssistantActive}
+        onClose={() => setIsVoiceAssistantActive(false)}
+        onFormDataUpdate={handleVoiceFormUpdate}
+      />
     </div>
   )
 }

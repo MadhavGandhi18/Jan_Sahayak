@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import axios from 'axios'
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import VoiceAssistant from '../components/VoiceAssistant'
 import './CustomForms.css'
 
 const CustomForms = () => {
@@ -16,6 +17,7 @@ const CustomForms = () => {
   const [isExtracting, setIsExtracting] = useState(false)
   const [extractionStatus, setExtractionStatus] = useState('')
   const [extractionError, setExtractionError] = useState(null)
+  const [isVoiceAssistantActive, setIsVoiceAssistantActive] = useState(false)
 
   const onDrop = (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
@@ -210,6 +212,15 @@ const CustomForms = () => {
       ...prev,
       [field]: value
     }))
+  }
+
+  // Handle voice assistant form data updates
+  const handleVoiceFormUpdate = (voiceFormData) => {
+    setFormData(prev => ({
+      ...prev,
+      ...voiceFormData
+    }))
+    setExtractedData(voiceFormData)
   }
 
   const handleFormTemplateChange = (e) => {
@@ -451,6 +462,27 @@ const CustomForms = () => {
           </motion.div>
         )}
       </div>
+
+      {/* Voice Assistant */}
+      {step === 'form' && (
+        <motion.button
+          className="voice-helper-btn"
+          onClick={() => setIsVoiceAssistantActive(true)}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>🎙️</span>
+          <span>Voice Helper</span>
+        </motion.button>
+      )}
+
+      <VoiceAssistant
+        isActive={isVoiceAssistantActive}
+        onClose={() => setIsVoiceAssistantActive(false)}
+        onFormDataUpdate={handleVoiceFormUpdate}
+      />
     </div>
   )
 }

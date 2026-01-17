@@ -1,13 +1,15 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import AnimatedGirl from '../components/AnimatedGirl'
+import VoiceAssistant from '../components/VoiceAssistant'
 import { useTranslation } from '../hooks/useTranslation'
 import backgroundImage from '../images/image.png'
 import './LandingPage.css'
 
 const LandingPage = () => {
   const { t } = useTranslation()
+  const [isVoiceAssistantActive, setIsVoiceAssistantActive] = useState(false)
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -128,6 +130,18 @@ const LandingPage = () => {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <AnimatedGirl />
+            <motion.button
+              className="voice-assistant-trigger"
+              onClick={() => setIsVoiceAssistantActive(true)}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="voice-icon">🎙️</span>
+              <span className="voice-text">Voice Helper</span>
+            </motion.button>
           </motion.div>
         </div>
         <motion.div
@@ -296,6 +310,12 @@ const LandingPage = () => {
           <p>{t('landing.footer')}</p>
         </div>
       </footer>
+
+      {/* Voice Assistant */}
+      <VoiceAssistant
+        isActive={isVoiceAssistantActive}
+        onClose={() => setIsVoiceAssistantActive(false)}
+      />
     </div>
   )
 }

@@ -297,6 +297,34 @@
   cursor: not-allowed;
 }
 
+/* Voice Helper Button */
+.voice-helper-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+  z-index: 999;
+}
+
+.voice-helper-btn:hover {
+  box-shadow: 0 12px 35px rgba(255, 107, 157, 0.6);
+}
+
+.voice-helper-btn span:first-child {
+  font-size: 1.3rem;
+}
+
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
