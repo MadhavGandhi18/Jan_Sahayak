@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 # Jan Sahayak - AI Document Assistant
 
 A modern web application for generating government affidavits and filling custom forms using AI technology.
+<img width="1365" height="621" alt="Screenshot 2026-01-17 072208" src="https://github.com/user-attachments/assets/270a562e-b560-4e32-a824-9c1266c77a42" />
+
 
 ## Features
 

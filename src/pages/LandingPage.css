@@ -180,6 +180,18 @@
   color: var(--primary-color);
 }
 
+.btn-chatbot {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-chatbot:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6a3d8e 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
 .hero-visual {
   height: 500px;
   position: relative;

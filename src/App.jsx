@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage'
 import GovtAffidavits from './pages/GovtAffidavits'
 import CustomForms from './pages/CustomForms'
 import AboutUs from './pages/AboutUs'
+import Chatbot from './pages/Chatbot'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/govt-affidavits" element={<GovtAffidavits />} />
             <Route path="/custom-forms" element={<CustomForms />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/chatbot" element={<Chatbot />} />
           </Routes>
         </div>
       </Router>
