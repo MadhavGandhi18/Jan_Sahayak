@@ -203,13 +203,14 @@
 
 /* Voice Assistant Trigger Button */
 .voice-assistant-trigger {
+  /* margin-top: 0.1rem; */
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
   color: white;
-  border: none;
+  border: 2px solid white;
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -225,8 +226,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 0;
-  height: 0;
+  width: 50;
+  height: 50;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);

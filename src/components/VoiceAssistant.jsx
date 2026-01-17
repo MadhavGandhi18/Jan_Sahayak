@@ -16,7 +16,7 @@ const VoiceAssistant = ({ onFormDataUpdate, isActive, onClose }) => {
   const audioRef = useRef(null)
   const navigate = useNavigate()
 
-  const ONDEMAND_API_KEY = import.meta.env.VITE_ONDEMAND_API_KEY || 'cJP3spu2jknHr9XWzGEatDgKH3F4u2pL'
+  const ONDEMAND_API_KEY ='cJP3spu2jknHr9XWzGEatDgKH3F4u2pL'
   const TTS_API_URL = 'https://api.on-demand.io/services/v1/public/service/execute/text_to_speech'
 
   // Income Certificate fields
