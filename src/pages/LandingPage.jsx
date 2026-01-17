@@ -119,6 +119,15 @@ const LandingPage = () => {
                   {t('landing.learnMore')}
                 </motion.button>
               </Link>
+              <Link to="/chatbot">
+                <motion.button
+                  className="btn btn-chatbot"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  💬 Chat with AI
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
           <motion.div
