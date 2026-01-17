@@ -1,0 +1,309 @@
+.animated-girl-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.animated-girl {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Head */
+.girl-head {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffdbac 0%, #f4c2a1 100%);
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.girl-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Eyes */
+.girl-eye {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #2c3e50;
+  border-radius: 50%;
+  top: 30px;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    height: 12px;
+  }
+  95% {
+    height: 2px;
+  }
+}
+
+.left-eye {
+  left: 20px;
+}
+
+.right-eye {
+  right: 20px;
+}
+
+.eye-pupil {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+}
+
+/* Smile */
+.girl-smile {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  border: 3px solid #2c3e50;
+  border-top: none;
+  border-radius: 0 0 30px 30px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hair */
+.girl-hair {
+  position: absolute;
+  width: 90px;
+  height: 60px;
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: -30px;
+  left: -5px;
+  z-index: -1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Body */
+.girl-body {
+  position: relative;
+  width: 100px;
+  height: 120px;
+  margin-top: -10px;
+  z-index: 2;
+}
+
+.girl-dress {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  border-radius: 50px 50px 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.girl-dress::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+/* Arms */
+.girl-arm {
+  position: absolute;
+  width: 20px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffdbac 0%, #f4c2a1 100%);
+  border-radius: 10px;
+  top: 90px;
+  z-index: 1;
+  transform-origin: top center;
+}
+
+.left-arm {
+  left: 20px;
+}
+
+.right-arm {
+  right: 20px;
+}
+
+.arm-hand {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #ffdbac 0%, #f4c2a1 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Phone Arm */
+.phone-arm {
+  z-index: 2;
+}
+
+/* Phone Device */
+.phone-device {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 50px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 2px solid #1a252f;
+  overflow: hidden;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2px;
+}
+
+.phone-content {
+  font-size: 1.2rem;
+  animation: documentPulse 2s ease-in-out infinite;
+}
+
+@keyframes documentPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.wave-hand {
+  z-index: 3;
+}
+
+/* Speech Bubble */
+.speech-bubble {
+  position: absolute;
+  top: -80px;
+  right: -20px;
+  background: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+/* Legs */
+.girl-legs {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  margin-top: -5px;
+  z-index: 1;
+}
+
+.girl-leg {
+  width: 25px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffdbac 0%, #f4c2a1 100%);
+  border-radius: 12px 12px 5px 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Shadow */
+.girl-shadow {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .animated-girl {
+    width: 150px;
+    height: 225px;
+  }
+  
+  .girl-head {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .girl-body {
+    width: 75px;
+    height: 90px;
+  }
+  
+  .girl-arm {
+    height: 45px;
+    width: 15px;
+  }
+  
+  .girl-leg {
+    width: 20px;
+    height: 60px;
+  }
+}
