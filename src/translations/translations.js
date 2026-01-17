@@ -1,12 +1,10 @@
 export const translations = {
   en: {
-    // Navigation
     nav: {
       govtAffidavits: 'Govt Affidavits',
       customForms: 'Custom Forms',
       aboutUs: 'About Us'
     },
-    // Landing Page
     landing: {
       welcome: 'Welcome to',
       subtitle: 'Your AI-Powered Document Assistant',
@@ -47,7 +45,6 @@ export const translations = {
       teamSubtitle: 'Meet the talented individuals behind Jan Sahayak',
       footer: '© 2024 Jan Sahayak. All rights reserved.'
     },
-    // Govt Affidavits
     affidavits: {
       title: 'Government Affidavits',
       subtitle: 'Select an affidavit type and let our AI guide you through the process',
@@ -69,7 +66,6 @@ export const translations = {
       generatePDF: 'Generate PDF',
       generating: 'Generating PDF...'
     },
-    // Custom Forms
     customForms: {
       title: 'Custom Forms',
       subtitle: 'Upload your Aadhar card and fill custom forms automatically',
@@ -92,7 +88,6 @@ export const translations = {
       generateDownload: 'Generate & Download PDF',
       generatingPDF: 'Generating PDF...'
     },
-    // About Us
     about: {
       title: 'About Us',
       subtitle: 'Meet the team behind Jan Sahayak',
@@ -100,7 +95,10 @@ export const translations = {
       missionText: 'Jan Sahayak is dedicated to simplifying document generation and form filling processes through the power of artificial intelligence. We aim to make bureaucratic procedures more accessible and efficient for everyone.',
       teamTitle: 'Our Team'
     },
-    // Common
+    chatbot: {
+      title: 'Jan Sahayak Chat Assistant',
+      placeholder: 'Type your message here...'
+    },
     common: {
       name: 'Name',
       fatherName: 'Father Name',
@@ -206,6 +204,10 @@ export const translations = {
       missionText: 'जन सहायक कृत्रिम बुद्धिमत्ता की शक्ति के माध्यम से दस्तावेज़ जनरेशन और फॉर्म भरने की प्रक्रियाओं को सरल बनाने के लिए समर्पित है। हम सभी के लिए नौकरशाही प्रक्रियाओं को अधिक सुलभ और कुशल बनाना चाहते हैं।',
       teamTitle: 'हमारी टीम'
     },
+    chatbot: {
+      title: 'जन सहायक चैट सहायक',
+      placeholder: 'यहाँ अपना संदेश टाइप करें...'
+    },
     common: {
       name: 'नाम',
       fatherName: 'पिता का नाम',
@@ -310,6 +312,10 @@ export const translations = {
       mission: 'आमचे मिशन',
       missionText: 'जन सहायक कृत्रिम बुद्धिमत्तेच्या शक्तीद्वारे दस्तऐवज निर्मिती आणि फॉर्म भरण्याच्या प्रक्रियांना सोपे करण्यासाठी समर्पित आहे. आम्ही सर्वांसाठी नौकरशाही प्रक्रिया अधिक सुलभ आणि कार्यक्षम बनवू इच्छितो.',
       teamTitle: 'आमची संघ'
+    },
+    chatbot: {
+      title: 'जन सहायक चैट सहाय्यक',
+      placeholder: 'येथे तुमचा संदेश टाइप करा...'
     },
     common: {
       name: 'नाव',
